@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:no_logo_proto/helpers/Divider.dart';
+import 'package:no_logo_proto/screens/filter_screen.dart';
 
 import '../helpers/bottomSheet.dart';
 import '../helpers/start_top.dart';
-import 'list2_screen.dart';
 
 class MapScreen extends StatelessWidget {
   const MapScreen({Key? key}) : super(key: key);
@@ -11,17 +12,20 @@ class MapScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      bottomNavigationBar: myBottomSheet(),
       body: SingleChildScrollView(
         child: Column(
           children: [
             StartTop(
-              topText: 'Map',
+              topText: 'Online',
+              pageText: 'Map',
             ),
             Row(
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 12),
                   child: Container(
+                    height: 40,
                     decoration: BoxDecoration(
                         border: Border.all(width: 5, color: Color(0XFFD1D6DB))),
                     width: MediaQuery.of(context).size.width / 1.4,
@@ -44,15 +48,23 @@ class MapScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                IconButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => List2()));
-                    },
-                    icon: const Icon(
-                      Icons.filter_alt,
-                      size: 40,
-                    ))
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FilterScreen(),
+                      ),
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                        height: 25,
+                        width: 25,
+                        child: Image.asset('images/Filter@3x.png')),
+                  ),
+                )
               ],
             ),
 
@@ -65,7 +77,8 @@ class MapScreen extends StatelessWidget {
                   // color: Colors.yellowAccent,
                   child: Image.asset('images/mapImage.png')),
             ),
-            myBottomSheet()
+            myDivider()
+            // myBottomSheet()
           ],
         ),
       ),

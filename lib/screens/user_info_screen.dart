@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:no_logo_proto/helpers/Divider.dart';
 
 import '../helpers/bottomSheet.dart';
 
@@ -13,6 +14,7 @@ class _UserInfoState extends State<UserInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: myBottomSheet(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -43,24 +45,12 @@ class _UserInfoState extends State<UserInfo> {
                       fontSize: 20.0,
                     ),
                   ),
-                  // IconButton(
-                  //   onPressed: () {
-                  //     Navigator.pop(context);
-                  //   },
-                  //   icon: Icon(
-                  //     Icons.arrow_back,
-                  //     size: 20,
-                  //     color: Colors.black,
-                  //   ),
-                  // ),
                 ],
               ),
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-              child: Divider(
-                thickness: 2,
-              ),
+              padding: EdgeInsets.only(top: 20, bottom: 55),
+              child: myDivider(),
             ),
             const Icon(
               Icons.circle,
@@ -88,7 +78,6 @@ class _UserInfoState extends State<UserInfo> {
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
               ),
             ),
-            myBottomSheet()
           ],
         ),
       ),

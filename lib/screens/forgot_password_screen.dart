@@ -10,7 +10,7 @@ class ForgotPass extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 80),
+              padding: const EdgeInsets.only(top: 120, bottom: 70, right: 50),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -4,7 +4,9 @@ import '../screens/user_info_screen.dart';
 
 class StartTop extends StatelessWidget {
   String? topText;
-  StartTop({Key? key, required this.topText}) : super(key: key);
+  String? pageText;
+  StartTop({Key? key, required this.topText, required this.pageText})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +16,12 @@ class StartTop extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: const EdgeInsets.only(top: 83, left: 28, bottom: 14),
+          //
+          Padding(
+            padding: const EdgeInsets.only(top: 60, left: 25, bottom: 14),
             child: Text(
-              'Client #584931',
-              style: TextStyle(
+              '$pageText',
+              style: const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
                   color: Colors.black),

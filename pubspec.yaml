@@ -37,6 +37,8 @@ dependencies:
   percent_indicator: ^4.2.2
   syncfusion_flutter_charts:
   google_maps_flutter: ^2.1.10
+  dropdown_search: ^5.0.2
+  dropdownfield:
 
 dev_dependencies:
   flutter_test:

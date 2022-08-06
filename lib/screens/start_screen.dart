@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:no_logo_proto/helpers/Divider.dart';
 
 import '../helpers/Circular_percentage_indicator.dart';
 import '../helpers/bar_chart.dart';
@@ -16,6 +17,7 @@ class _StartScreenState extends State<StartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const myBottomSheet(),
       // bottomSheet: myBottomSheet(),
       body: SafeArea(
         child: ListView(
@@ -23,7 +25,8 @@ class _StartScreenState extends State<StartScreen> {
           //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             StartTop(
-              topText: 'Start',
+              topText: 'Online',
+              pageText: 'Start',
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 22),
@@ -52,15 +55,7 @@ class _StartScreenState extends State<StartScreen> {
               ),
             ),
             //////////////////////////   Divider Start here  //////////////
-            Center(
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width / 1.1,
-                child: const Divider(
-                  height: 10,
-                  color: Colors.black38,
-                ),
-              ),
-            ),
+            myDivider(),
             const CircleProgress(),
             const SizedBox(
               height: 10,
@@ -114,16 +109,17 @@ class _StartScreenState extends State<StartScreen> {
                 )
               ],
             ),
-            const SizedBox(
-              height: 50,
+            SizedBox(
+              height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.all(0),
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 50),
-                child: myBottomSheet(),
-              ),
-            ),
+            myDivider()
+            // const Padding(
+            //   padding: EdgeInsets.all(0),
+            //   child: Padding(
+            //     padding: EdgeInsets.only(bottom: 50),
+            //     child: myBottomSheet(),
+            //   ),
+            // ),
           ],
         ),
       ),
