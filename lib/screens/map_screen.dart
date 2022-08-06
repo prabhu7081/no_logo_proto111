@@ -77,7 +77,7 @@ class MapScreen extends StatelessWidget {
                   // color: Colors.yellowAccent,
                   child: Image.asset('images/mapImage.png')),
             ),
-            myDivider()
+            const myDivider()
             // myBottomSheet()
           ],
         ),
